@@ -10,7 +10,17 @@
 
 using namespace std;
 
-int main() {
+// prompt user for vector size
+void userPrompt() {
+    int vectorSize;
 
+    cout << "Enter vector size: ";
+    cin >> vectorSize;
+
+}
+
+int main() {
+    userPrompt();
+    
     return 0;
 }
