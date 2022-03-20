@@ -1,23 +1,32 @@
-/*
+/**
  *  file: main.cpp
  *  author: Antara Newaz <anc812@uregina.ca>
  *  version: 0.1
- *  date-created: mar-13-2022
- *  last modified: mar-13-2022
+ *  date-created: 12-mar-2022
+ *  lat-modified: 20-mar-2022
  */
 
 #include <iostream>
 #include <string>
 #include <vector>
+#include <algorithm>
 #include <fstream>
 #include <iterator>
-#include <algorithm>
 #include <sstream>
 #include <time.h>
 
 using namespace std;
 
-// shaker sort algorithm - ascending order
+/**
+ * ascendingShakerSort
+ * Purpose: This function reads number data from a file and sorts the numbers in ascending order
+ * Parameter(s): N/A
+ * Precondition(s): 
+ *      <1> random_generation.txt must be located in the root directory of this application
+ * Returns: N/A
+ * Side effect: N/A
+ */
+
 void ascendingShakerSort() {
     string fileData;
     vector<int> arr;
@@ -76,7 +85,16 @@ void ascendingShakerSort() {
     createFile.close();
 }
 
-// shaker sort algorithm - descending order
+/**
+ * descendingShakerSort
+ * Purpose: This function reads number data from a file and sorts the numbers in descending order
+ * Parameter(s): N/A
+ * Precondition(s): 
+ *      <1> random_generation.txt must be located in the root directory of this application
+ * Returns: N/A
+ * Side effect: N/A
+ */
+
 void descendingShakerSort() {
     string fileData;
     vector<int> arr;
@@ -96,7 +114,7 @@ void descendingShakerSort() {
 
     clock_t startTime = clock(); // clock start time
 
-    // ascending sort
+    // descending sort
     while (swap) {
         swap = false;
 
@@ -135,7 +153,17 @@ void descendingShakerSort() {
     createFile.close();
 }
 
-// randomly generate vector elements
+/**
+ * randomGeneration
+ * Purpose: This function generates random numbers and writes them to a text file
+ * Parameter(s): 
+ *      <1> vectorSize: an integer type variable for storing that amount of vector elements
+ * Precondition(s): 
+ *      <1> parameter must receive data of type integer
+ * Returns: N/A
+ * Side effect: N/A
+ */
+
 void randomGeneration(int vectorSize) {
     vector<string> arr;
 
@@ -144,15 +172,22 @@ void randomGeneration(int vectorSize) {
     }
 
     ofstream createFile("./random_generation.txt");
-
     ostream_iterator<string> output_iterator(createFile, "\n");
-
     copy(arr.begin(), arr.end(), output_iterator);
 
     createFile.close();
 }
 
-// prompt user for vector size
+/**
+ * userPrompt
+ * Purpose: This function takes in the size for creating vectors elements from the user
+ * Parameter(s): N/A
+ * Precondition(s): 
+ *      <1> user must input an integer value
+ * Returns: N/A
+ * Side effect: N/A
+ */
+
 void userPrompt() {
     int vectorSize;
 
@@ -162,10 +197,14 @@ void userPrompt() {
     randomGeneration(vectorSize);
 }
 
+// driver
 int main() {
+
     userPrompt();
 
     ascendingShakerSort();
+
+    descendingShakerSort();
 
     return 0;
 }
