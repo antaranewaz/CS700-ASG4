@@ -83,6 +83,8 @@ void ascendingShakerSort() {
     createFile << result.str();
     createFile << "\nExecution Time: " << timeTaken << "s";
     createFile.close();
+
+    cout << "\nAscending Order file created. Time taken for execution: " << timeTaken << endl;
 }
 
 /**
@@ -151,6 +153,8 @@ void descendingShakerSort() {
     createFile << result.str();
     createFile << "\nExecution Time: " << timeTaken << "s";
     createFile.close();
+
+    cout << "\nDescending Order file created. Time taken for execution: " << timeTaken << endl;
 }
 
 /**
@@ -174,8 +178,9 @@ void randomGeneration(int vectorSize) {
     ofstream createFile("./random_generation.txt");
     ostream_iterator<string> output_iterator(createFile, "\n");
     copy(arr.begin(), arr.end(), output_iterator);
-
     createFile.close();
+
+    cout << "Random numbers generated and file created." << endl;
 }
 
 /**
