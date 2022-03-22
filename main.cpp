@@ -84,7 +84,7 @@ void ascendingShakerSort() {
     createFile << "\nExecution Time: " << timeTaken << "s";
     createFile.close();
 
-    cout << "\nAscending Order file created. Time taken for execution: " << timeTaken << endl;
+    cout << "\nAscending Order file created. Time taken for execution: " << timeTaken << "s" << endl;
 }
 
 /**
@@ -154,7 +154,7 @@ void descendingShakerSort() {
     createFile << "\nExecution Time: " << timeTaken << "s";
     createFile.close();
 
-    cout << "\nDescending Order file created. Time taken for execution: " << timeTaken << endl;
+    cout << "\nDescending Order file created. Time taken for execution: " << timeTaken << "s" << endl;
 }
 
 /**
